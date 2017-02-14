@@ -1,10 +1,10 @@
 var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
 
-ctx.fillStyle = "#ff0000";
-
+var r = c.getBoundingClientRect();
 c.addEventListener("click", function(e) {
-	ctx.fillRect( 50, 50, 100, 200 );	
+	ctx.fillStyle = "rgba(" + Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256) + ", 100)";
+	ctx.fillRect( e.clientX - r.left, e.clientY - r.top, 100, 200 );	
     });
                      
 var clear = document.getElementById("clearButton");
